@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>LSPD Cyberbase</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div id="logo-container">
+    <img src="lspd-logo.png" alt="LSPD Logo" id="logo" />
+    <h1>LSPD Cyberbase</h1>
+  </div>
+  <nav id="tabs">
+    <div class="tab active" data-tab="search">Reisepasssuche</div>
+    <div class="tab" data-tab="freigaben">Freigaben</div>
+    <div class="tab" data-tab="blacklist">Blacklist</div>
+  </nav>
+</header>
+
+<main>
+  <section id="search" class="tab-content active">
+    <input type="text" id="passportInput" placeholder="Reisepassnummer eingeben" />
+    <button id="searchBtn">Suchen</button>
+    <div id="searchResult"></div>
+  </section>
+
+  <section id="freigaben" class="tab-content">
+    <form id="clearanceForm">
+      <input type="text" id="clearanceName" placeholder="Name" required />
+      <input type="text" id="clearanceId" placeholder="Reisepass-ID" required />
+      <select id="clearanceType" required>
+        <option value="LMG">LMG</option>
+        <option value="Sniper">Sniper</option>
+        <option value="Balaclava">Balaclava</option>
+      </select>
+      <input type="text" id="officerName" placeholder="Beamter" required />
+      <button type="submit">Freigabe eintragen</button>
+    </form>
+    <div id="clearanceList"></div>
+  </section>
+
+  <section id="blacklist" class="tab-content">
+    <form id="blacklistForm">
+      <input type="text" id="blName" placeholder="Name" required />
+      <input type="text" id="blId" placeholder="ID" required />
+      <input type="text" id="blRank" placeholder="Rang" required />
+      <input type="text" id="blReason" placeholder="Grund" required />
+      <select id="blDuration" required>
+        <option value="1">1 Tag</option>
+        <option value="3">3 Tage</option>
+        <option value="7">7 Tage</option>
+        <option value="14">14 Tage</option>
+        <option value="30" selected>30 Tage</option>
+      </select>
+      <button type="submit">Zur Blacklist hinzufügen</button>
+    </form>
+    <div id="blacklistEntries"></div>
+  </section>
+</main>
+
+<footer id="footer">Made by redr0ver</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
